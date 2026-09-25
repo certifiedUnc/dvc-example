@@ -1,0 +1,24 @@
+stages:
+  train:
+    cmd: python train.py --config params.yaml
+    deps:
+      - train.py
+      - data
+    params:
+      - train.image_width
+      - train.image_height
+      - train.epochs
+      - train.batch_size
+      - train.data.train_dir
+      - train.data.validation_dir
+      - train.outputs.model_weights
+      - train.outputs.train_features
+      - train.outputs.validation_features
+      - train.outputs.metrics
+    outs:
+      - model.weights.h5
+      - bottleneck_features_train.npy
+      - bottleneck_features_validation.npy
+    metrics:
+      - metrics.csv:
+          cache: false

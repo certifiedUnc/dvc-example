@@ -1,0 +1,13 @@
+train:
+  image_width: 150
+  image_height: 150
+  epochs: 10
+  batch_size: 10
+  data:
+    train_dir: data/train
+    validation_dir: data/validation
+  outputs:
+    model_weights: model.weights.h5
+    train_features: bottleneck_features_train.npy
+    validation_features: bottleneck_features_validation.npy
+    metrics: metrics.csv
