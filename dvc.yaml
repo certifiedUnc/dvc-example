@@ -1,6 +1,6 @@
 stages:
   train:
-    cmd: python train.py --config params.yaml
+    cmd: python train.py --config params.yaml 
     deps:
       - train.py
       - data
